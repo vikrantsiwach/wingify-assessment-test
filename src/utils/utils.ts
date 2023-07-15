@@ -26,3 +26,5 @@ export const recursiveSearch = (
     }
   }
 };
+
+export const clonedArray = (data: ListItem[]) => JSON.parse(JSON.stringify(data))

@@ -16,4 +16,9 @@ const ButtonComponent: React.FC<Props> = (props: Props) => {
     )
 }
 
-export default ButtonComponent;
+ButtonComponent.defaultProps = {
+    text: "Click me",
+    handleClick: () => console.log("button clicked")
+}
+
+export default React.memo(ButtonComponent);

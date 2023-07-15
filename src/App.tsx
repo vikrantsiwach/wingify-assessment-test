@@ -1,8 +1,8 @@
 import React from 'react';
 import TreeComponent from './components/TreeComponent';
 import { treeData } from './constants/api';
-import './index.css';
 import { ListItem } from './types/listItem';
+import './index.css';
 
 function App() {
     const [getCurrentState, setGetCurrentState] = React.useState(false)

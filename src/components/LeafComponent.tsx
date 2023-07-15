@@ -33,4 +33,4 @@ const LeafComponent: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default LeafComponent;
+export default React.memo(LeafComponent);

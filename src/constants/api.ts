@@ -43,6 +43,22 @@ export const treeData: ListItem[] = [
           ],
         },
         { id: 14, name: "Container 2", isChecked: true, items: [] },
+        { id: 15, name: "Container 3", isChecked: true, items: [
+          {
+            id: 16,
+            name: "Container 3_1",
+            isChecked: false,
+            items: [
+              {
+                id: 17,
+                name: "Draft 3",
+                isChecked: false,
+                items: [{ id: 18, name: "Campaign 3", isChecked: true, items: [] }],
+              },
+              { id: 19, name: "Draft 4", isChecked: false, items: [] },
+            ],
+          }
+        ] },
       ]
     },
   ];

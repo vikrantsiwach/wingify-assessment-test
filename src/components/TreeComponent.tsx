@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import LeafComponent from './LeafComponent';
 import { ListItem } from '../types/listItem';
-import { doCheckRecursively, recursiveSearch } from '../utils/utils';
+import { clonedArray, doCheckRecursively, recursiveSearch } from '../utils/utils';
 import ButtonComponent from './ButtonComponent';
 
 interface Props {
@@ -21,7 +21,7 @@ const TreeComponent: React.FC<Props> = (props: Props) => {
   },[props.getCurrentState])
 
   const onSelectChange = (item: ListItem) => {
-    const updatedData = [...data]
+    const updatedData = clonedArray(data)
     const newValue = recursiveSearch(item.id, updatedData)
     if (newValue) {
       newValue.isChecked = !newValue.isChecked;
@@ -32,8 +32,8 @@ const TreeComponent: React.FC<Props> = (props: Props) => {
     }
   }
 
-  const handleSelectAllChange = () => setData(() => doCheckRecursively([...data], true))
-  const handleUnSelectAllChange = () => setData(() => doCheckRecursively([...data], false))
+  const handleSelectAllChange = () => setData(() => doCheckRecursively(clonedArray(data), true))
+  const handleUnSelectAllChange = () => setData(() => doCheckRecursively(clonedArray(data), false))
 
   return (
     <div className="flex flex-col justify-center px-6 py-12">
