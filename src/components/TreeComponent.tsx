@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import LeafComponent from './LeafComponent';
 import { ListItem } from '../types/listItem';
 import { doCheckRecursively, recursiveSearch } from '../utils/utils';
+import ButtonComponent from './ButtonComponent';
 
 interface Props {
   data: ListItem[];
@@ -37,18 +38,8 @@ const TreeComponent: React.FC<Props> = (props: Props) => {
   return (
     <div className="flex flex-col justify-center px-6 py-12">
       <div className="flex-row">
-        <button
-          className="ml-4 cursor-pointer text-blue-500 hover:underline"
-          onClick={handleSelectAllChange}
-        >
-          {"Select All"}
-        </button>
-        <button
-          className="ml-4 cursor-pointer text-blue-500 hover:underline"
-          onClick={handleUnSelectAllChange}
-        >
-          {"Unselect All"}
-        </button>
+        <ButtonComponent text='Select All' handleClick={handleSelectAllChange}/>
+        <ButtonComponent text='Unselect All' handleClick={handleUnSelectAllChange}/>
       </div>
 
       <div className="mt-4 flex flex-col">
